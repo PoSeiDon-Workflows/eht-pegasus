@@ -30,13 +30,13 @@ sites:
     fileServers:
     - url: http://poseidon-data/~poseidon/scratch
       operation: get
-    - url: scp://poseidon@poseidon-data:223/home/poseidon/public_html/scratch
+    - url: scp://poseidon@poseidon-data/home/poseidon/public_html/scratch
       operation: put
   - type: sharedStorage
     path: /home/poseidon/public_html/storage
     sharedFileSystem: false
     fileServers:
-    - url: scp://poseidon@poseidon-data:223/home/poseidon/public_html/storage
+    - url: scp://poseidon@poseidon-data/home/poseidon/public_html/storage
       operation: all
   profiles:
     condor:
@@ -49,4 +49,4 @@ sites:
       style: condor
       data.configuration: nonsharedfs
       SSH_PRIVATE_KEY: ${HOME}/.ssh/storage_rsa
-      #gridstart.arguments: -m 5
+      gridstart.arguments: -m 5

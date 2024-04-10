@@ -5,22 +5,14 @@ x-pegasus:
 pegasus: 5.0.4
 containers:
 - name: difmap
-  type: docker
-  image: http://poseidon-data/~poseidon/eht-pegasus/difmap.tar
+  type: singularity
+  image: http://poseidon-data/~poseidon/eht-pegasus/difmap.sif
   image.site: local
   profiles:
     env:
       PYTHONPATH: /home/eht/.local/lib/python3.8/site-packages
       PATH: /opt/conda/envs/eht-imaging/bin:/opt/conda/condabin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/pgplot:/home/eht/uvf_difmap_2.5k
-    pegasus:
-      container.arguments: "--network fabric-testbed_default"
 transformations:
-- namespace: pegasus
-  name: worker
-  sites:
-  - name: local
-    pfn: https://download.pegasus.isi.edu/pegasus/5.1.0dev/pegasus-worker-5.1.0dev-x86_64_rhel_8.tar.gz
-    type: stageable
 - name: difmapp
   sites:
   - name: condorpool
