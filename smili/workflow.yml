@@ -1,0 +1,292 @@
+x-pegasus:
+  apiLang: python
+  createdBy: mayani
+  createdOn: 04-09-24T11:09:16Z
+pegasus: 5.0.4
+name: eht-smili
+jobs:
+- type: job
+  name: smili_imaging_pipeline
+  id: ID0000001
+  arguments:
+  - -i
+  - SR1_M87_2017_101_hi_hops_netcal_StokesI.uvfits
+  - --day
+  - 11
+  - --nproc
+  - '1'
+  uses:
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.precal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.selfcal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: smili_imaging_pipeline
+  id: ID0000002
+  arguments:
+  - -i
+  - SR1_M87_2017_101_lo_hops_netcal_StokesI.uvfits
+  - --day
+  - 11
+  - --nproc
+  - '1'
+  uses:
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.selfcal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.precal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: smili_imaging_pipeline
+  id: ID0000003
+  arguments:
+  - -i
+  - SR1_M87_2017_096_lo_hops_netcal_StokesI.uvfits
+  - --day
+  - 6
+  - --nproc
+  - '1'
+  uses:
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.selfcal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.precal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: smili_imaging_pipeline
+  id: ID0000004
+  arguments:
+  - -i
+  - SR1_M87_2017_096_hi_hops_netcal_StokesI.uvfits
+  - --day
+  - 6
+  - --nproc
+  - '1'
+  uses:
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.selfcal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.precal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: smili_imaging_pipeline
+  id: ID0000005
+  arguments:
+  - -i
+  - SR1_M87_2017_100_lo_hops_netcal_StokesI.uvfits
+  - --day
+  - 10
+  - --nproc
+  - '1'
+  uses:
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.precal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.selfcal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: smili_imaging_pipeline
+  id: ID0000006
+  arguments:
+  - -i
+  - SR1_M87_2017_100_hi_hops_netcal_StokesI.uvfits
+  - --day
+  - 10
+  - --nproc
+  - '1'
+  uses:
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.selfcal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.precal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.uvfits
+    type: input
+- type: job
+  name: smili_imaging_pipeline
+  id: ID0000007
+  arguments:
+  - -i
+  - SR1_M87_2017_095_lo_hops_netcal_StokesI.uvfits
+  - --day
+  - 5
+  - --nproc
+  - '1'
+  uses:
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.precal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.selfcal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.uvfits
+    type: input
+- type: job
+  name: smili_imaging_pipeline
+  id: ID0000008
+  arguments:
+  - -i
+  - SR1_M87_2017_095_hi_hops_netcal_StokesI.uvfits
+  - --day
+  - 5
+  - --nproc
+  - '1'
+  uses:
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.selfcal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.precal.uvfits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: smili_postprocessing
+  id: ID0000009
+  arguments:
+  - -i
+  - SR1_M87_2017_095_hi_hops_netcal_StokesI.fits
+  - -o
+  - SR1_M87_2017_095_processed.pdf
+  - --all
+  uses:
+  - lfn: afmhot_10us.cmap
+    type: input
+  - lfn: SR1_M87_2017_095_processed.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.fits
+    type: input
+- type: job
+  name: smili_postprocessing
+  id: ID0000010
+  arguments:
+  - -i
+  - SR1_M87_2017_096_hi_hops_netcal_StokesI.fits
+  - -o
+  - SR1_M87_2017_096_processed.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_096_processed.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.fits
+    type: input
+- type: job
+  name: smili_postprocessing
+  id: ID0000011
+  arguments:
+  - -i
+  - SR1_M87_2017_100_hi_hops_netcal_StokesI.fits
+  - -o
+  - SR1_M87_2017_100_processed.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+  - lfn: SR1_M87_2017_100_processed.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: smili_postprocessing
+  id: ID0000012
+  arguments:
+  - -i
+  - SR1_M87_2017_101_hi_hops_netcal_StokesI.fits
+  - -o
+  - SR1_M87_2017_101_processed.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.fits
+    type: input
+  - lfn: SR1_M87_2017_101_processed.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+jobDependencies:
+- id: ID0000001
+  children:
+  - ID0000012
+- id: ID0000004
+  children:
+  - ID0000010
+- id: ID0000006
+  children:
+  - ID0000011
+- id: ID0000008
+  children:
+  - ID0000009

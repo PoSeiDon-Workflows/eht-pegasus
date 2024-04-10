@@ -1,0 +1,216 @@
+x-pegasus:
+  apiLang: python
+  createdBy: mayani
+  createdOn: 04-09-24T11:09:08Z
+pegasus: 5.0.4
+name: eht-imaging
+jobs:
+- type: job
+  name: eht-imaging_pipeline
+  id: ID0000001
+  arguments:
+  - -i
+  - SR1_M87_2017_095_lo_hops_netcal_StokesI.uvfits
+  - -i2
+  - SR1_M87_2017_095_hi_hops_netcal_StokesI.uvfits
+  - -o
+  - SR1_M87_2017_095.fits
+  - --savepdf
+  - --imgsum
+  uses:
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_095.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_imgsum.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_095.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: eht-imaging_postprocessing
+  id: ID0000002
+  arguments:
+  - -i
+  - SR1_M87_2017_095.fits
+  - -o
+  - SR1_M87_2017_095_processed.pdf
+  - --blur
+  - --afmhot10us
+  - --notitle
+  uses:
+  - lfn: SR1_M87_2017_095.fits
+    type: input
+  - lfn: SR1_M87_2017_095_processed.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: eht-imaging_pipeline
+  id: ID0000003
+  arguments:
+  - -i
+  - SR1_M87_2017_096_lo_hops_netcal_StokesI.uvfits
+  - -i2
+  - SR1_M87_2017_096_hi_hops_netcal_StokesI.uvfits
+  - -o
+  - SR1_M87_2017_096.fits
+  - --savepdf
+  - --imgsum
+  uses:
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_096.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_096_imgsum.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: eht-imaging_postprocessing
+  id: ID0000004
+  arguments:
+  - -i
+  - SR1_M87_2017_096.fits
+  - -o
+  - SR1_M87_2017_096_processed.pdf
+  - --blur
+  - --afmhot10us
+  - --notitle
+  uses:
+  - lfn: SR1_M87_2017_096_processed.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: eht-imaging_pipeline
+  id: ID0000005
+  arguments:
+  - -i
+  - SR1_M87_2017_100_lo_hops_netcal_StokesI.uvfits
+  - -i2
+  - SR1_M87_2017_100_hi_hops_netcal_StokesI.uvfits
+  - -o
+  - SR1_M87_2017_100.fits
+  - --savepdf
+  - --imgsum
+  uses:
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_100_imgsum.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: eht-imaging_postprocessing
+  id: ID0000006
+  arguments:
+  - -i
+  - SR1_M87_2017_100.fits
+  - -o
+  - SR1_M87_2017_100_processed.pdf
+  - --blur
+  - --afmhot10us
+  - --notitle
+  uses:
+  - lfn: SR1_M87_2017_100_processed.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: eht-imaging_pipeline
+  id: ID0000007
+  arguments:
+  - -i
+  - SR1_M87_2017_101_lo_hops_netcal_StokesI.uvfits
+  - -i2
+  - SR1_M87_2017_101_hi_hops_netcal_StokesI.uvfits
+  - -o
+  - SR1_M87_2017_101.fits
+  - --savepdf
+  - --imgsum
+  uses:
+  - lfn: SR1_M87_2017_101_imgsum.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_101.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: eht-imaging_postprocessing
+  id: ID0000008
+  arguments:
+  - -i
+  - SR1_M87_2017_101.fits
+  - -o
+  - SR1_M87_2017_101_processed.pdf
+  - --blur
+  - --afmhot10us
+  - --notitle
+  uses:
+  - lfn: SR1_M87_2017_101_processed.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+jobDependencies:
+- id: ID0000001
+  children:
+  - ID0000002
+- id: ID0000003
+  children:
+  - ID0000004
+- id: ID0000005
+  children:
+  - ID0000006
+- id: ID0000007
+  children:
+  - ID0000008

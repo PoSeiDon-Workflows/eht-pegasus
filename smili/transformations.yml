@@ -1,0 +1,34 @@
+x-pegasus:
+  apiLang: python
+  createdBy: mayani
+  createdOn: 04-09-24T11:09:16Z
+pegasus: 5.0.4
+containers:
+- name: smili
+  type: docker
+  image: http://poseidon-data/~poseidon/eht-pegasus/smili.tar
+  image.site: local
+  profiles:
+    env:
+      PATH: /root/.pyenv/versions/anaconda3-5.3.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    pegasus:
+      container.arguments: "--network fabric-testbed_default"
+transformations:
+- namespace: pegasus
+  name: worker
+  sites:
+  - name: local
+    pfn: https://download.pegasus.isi.edu/pegasus/5.1.0dev/pegasus-worker-5.1.0dev-x86_64_rhel_8.tar.gz
+    type: stageable
+- name: smili_imaging_pipeline
+  sites:
+  - name: condorpool
+    pfn: http://poseidon-data/~poseidon/eht-pegasus/scripts/smili_imaging_pipeline.py
+    type: stageable
+    container: smili
+- name: smili_postprocessing
+  sites:
+  - name: condorpool
+    pfn: http://poseidon-data/~poseidon/eht-pegasus/scripts/smili_postprocessing.py
+    type: stageable
+    container: smili

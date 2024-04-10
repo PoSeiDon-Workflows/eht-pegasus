@@ -1,0 +1,736 @@
+x-pegasus:
+  apiLang: python
+  createdBy: mayani
+  createdOn: 04-10-24T10:59:06Z
+pegasus: 5.0.4
+name: eht-difmap
+jobs:
+- type: job
+  name: difmapp
+  id: ID0000001
+  arguments:
+  - SR1_M87_2017_101_hi_hops_netcal_StokesI.uvfits
+  uses:
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.mod
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: EHT_Difmap
+    type: input
+  - lfn: CircMask_r30_x-0.002_y0.022.win
+    type: input
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.par
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.win
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.stat
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.uvf
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: difmap-postprocessing
+  id: ID0000002
+  arguments:
+  - -i
+  - SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+  - -o
+  - SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000003
+  arguments:
+  - -i
+  - SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: SR1_M87_2017_101_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmapp
+  id: ID0000004
+  arguments:
+  - SR1_M87_2017_101_lo_hops_netcal_StokesI.uvfits
+  uses:
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: EHT_Difmap
+    type: input
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: CircMask_r30_x-0.002_y0.022.win
+    type: input
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.par
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.mod
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.uvf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.win
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.stat
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.uvfits
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000005
+  arguments:
+  - -i
+  - SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+  - -o
+  - SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: input
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000006
+  arguments:
+  - -i
+  - SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-imgsum
+  id: ID0000007
+  arguments:
+  - -i
+  - SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_101_lo_hops_netcal_StokesI.uvfits
+  - -O
+  - .
+  uses:
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.img.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_101_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmapp
+  id: ID0000008
+  arguments:
+  - SR1_M87_2017_096_lo_hops_netcal_StokesI.uvfits
+  uses:
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.uvf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.stat
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.par
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.win
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: EHT_Difmap
+    type: input
+  - lfn: CircMask_r30_x-0.002_y0.022.win
+    type: input
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.mod
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: difmap-postprocessing
+  id: ID0000009
+  arguments:
+  - -i
+  - SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+  - -o
+  - SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: input
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000010
+  arguments:
+  - -i
+  - SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-imgsum
+  id: ID0000011
+  arguments:
+  - -i
+  - SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_096_lo_hops_netcal_StokesI.uvfits
+  - -O
+  - .
+  uses:
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: SR1_M87_2017_096_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.img.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmapp
+  id: ID0000012
+  arguments:
+  - SR1_M87_2017_096_hi_hops_netcal_StokesI.uvfits
+  uses:
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.mod
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: EHT_Difmap
+    type: input
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.par
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.uvf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: CircMask_r30_x-0.002_y0.022.win
+    type: input
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.win
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.stat
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: difmap-postprocessing
+  id: ID0000013
+  arguments:
+  - -i
+  - SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+  - -o
+  - SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: input
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000014
+  arguments:
+  - -i
+  - SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_096_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmapp
+  id: ID0000015
+  arguments:
+  - SR1_M87_2017_100_lo_hops_netcal_StokesI.uvfits
+  uses:
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: EHT_Difmap
+    type: input
+  - lfn: CircMask_r30_x-0.002_y0.022.win
+    type: input
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.win
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.uvf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.par
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.mod
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.stat
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: difmap-postprocessing
+  id: ID0000016
+  arguments:
+  - -i
+  - SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+  - -o
+  - SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000017
+  arguments:
+  - -i
+  - SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-imgsum
+  id: ID0000018
+  arguments:
+  - -i
+  - SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_100_lo_hops_netcal_StokesI.uvfits
+  - -O
+  - .
+  uses:
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.img.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: SR1_M87_2017_100_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmapp
+  id: ID0000019
+  arguments:
+  - SR1_M87_2017_100_hi_hops_netcal_StokesI.uvfits
+  uses:
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: EHT_Difmap
+    type: input
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: CircMask_r30_x-0.002_y0.022.win
+    type: input
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.uvf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.par
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.mod
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.win
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.stat
+    type: output
+    stageOut: true
+    registerReplica: false
+- type: job
+  name: difmap-postprocessing
+  id: ID0000020
+  arguments:
+  - -i
+  - SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+  - -o
+  - SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000021
+  arguments:
+  - -i
+  - SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: SR1_M87_2017_100_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmapp
+  id: ID0000022
+  arguments:
+  - SR1_M87_2017_095_lo_hops_netcal_StokesI.uvfits
+  uses:
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: EHT_Difmap
+    type: input
+  - lfn: CircMask_r30_x-0.002_y0.022.win
+    type: input
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.win
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.mod
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.par
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.stat
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.uvf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.uvfits
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000023
+  arguments:
+  - -i
+  - SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+  - -o
+  - SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: input
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000024
+  arguments:
+  - -i
+  - SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-imgsum
+  id: ID0000025
+  arguments:
+  - -i
+  - SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_095_lo_hops_netcal_StokesI.uvfits
+  - -O
+  - .
+  uses:
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.img.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: SR1_M87_2017_095_lo_hops_netcal_StokesI.uvfits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmapp
+  id: ID0000026
+  arguments:
+  - SR1_M87_2017_095_hi_hops_netcal_StokesI.uvfits
+  uses:
+  - lfn: EHT_Difmap
+    type: input
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.par
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: CircMask_r30_x-0.002_y0.022.win
+    type: input
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.uvf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.mod
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.stat
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.win
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.uvfits
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000027
+  arguments:
+  - -i
+  - SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+  - -o
+  - SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+- type: job
+  name: difmap-postprocessing
+  id: ID0000028
+  arguments:
+  - -i
+  - SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+  - -o
+  - SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+  - --all
+  uses:
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.pdf
+    type: output
+    stageOut: true
+    registerReplica: false
+  - lfn: SR1_M87_2017_095_hi_hops_netcal_StokesI.CircMask_r30_x-0.002_y0.022.RT-10.CF0.5.ALMA0.1.UVW2_-1.noresiduals.fits
+    type: input
+  - lfn: afmhot_10us.cmap
+    type: input
+jobDependencies:
+- id: ID0000001
+  children:
+  - ID0000002
+  - ID0000003
+- id: ID0000004
+  children:
+  - ID0000006
+  - ID0000007
+  - ID0000005
+- id: ID0000008
+  children:
+  - ID0000009
+  - ID0000010
+  - ID0000011
+- id: ID0000012
+  children:
+  - ID0000014
+  - ID0000013
+- id: ID0000015
+  children:
+  - ID0000018
+  - ID0000016
+  - ID0000017
+- id: ID0000019
+  children:
+  - ID0000021
+  - ID0000020
+- id: ID0000022
+  children:
+  - ID0000023
+  - ID0000025
+  - ID0000024
+- id: ID0000026
+  children:
+  - ID0000027
+  - ID0000028
